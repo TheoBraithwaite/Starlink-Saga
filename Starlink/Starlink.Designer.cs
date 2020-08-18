@@ -28,13 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.LblTitle = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
+            // 
+            // LblTitle
+            // 
+            this.LblTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.LblTitle.Font = new System.Drawing.Font("OCR A Std", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblTitle.Location = new System.Drawing.Point(12, 3);
+            this.LblTitle.Name = "LblTitle";
+            this.LblTitle.Size = new System.Drawing.Size(504, 31);
+            this.LblTitle.TabIndex = 0;
+            this.LblTitle.Text = "The Starlink Saga";
+            this.LblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Black;
+            this.panel1.Location = new System.Drawing.Point(12, 37);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(504, 412);
+            this.panel1.TabIndex = 1;
             // 
             // frmStarlink
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(684, 461);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.LblTitle);
             this.Name = "frmStarlink";
             this.Text = "Starlink Saga";
             this.ResumeLayout(false);
@@ -42,6 +67,9 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Label LblTitle;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 
