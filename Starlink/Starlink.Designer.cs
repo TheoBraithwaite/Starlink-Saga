@@ -36,6 +36,16 @@
             this.LblScore = new System.Windows.Forms.Label();
             this.txtHealth = new System.Windows.Forms.TextBox();
             this.LblHealth = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.gameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.startToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.soundOnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.soundOffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.instructionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // LblTitle
@@ -44,17 +54,17 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.LblTitle.Font = new System.Drawing.Font("OCR A Std", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTitle.Location = new System.Drawing.Point(12, 3);
+            this.LblTitle.Location = new System.Drawing.Point(12, 27);
             this.LblTitle.Name = "LblTitle";
-            this.LblTitle.Size = new System.Drawing.Size(504, 31);
+            this.LblTitle.Size = new System.Drawing.Size(475, 42);
             this.LblTitle.TabIndex = 0;
             this.LblTitle.Text = "The Starlink Saga";
             this.LblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // PnlStarlink
             // 
-            this.PnlStarlink.BackColor = System.Drawing.Color.Black;
-            this.PnlStarlink.Location = new System.Drawing.Point(12, 37);
+            this.PnlStarlink.BackColor = System.Drawing.Color.Silver;
+            this.PnlStarlink.Location = new System.Drawing.Point(12, 70);
             this.PnlStarlink.Name = "PnlStarlink";
             this.PnlStarlink.Size = new System.Drawing.Size(504, 412);
             this.PnlStarlink.TabIndex = 1;
@@ -118,11 +128,79 @@
             this.LblHealth.TabIndex = 6;
             this.LblHealth.Text = "Health";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gameToolStripMenuItem,
+            this.optionsToolStripMenuItem,
+            this.helpToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(684, 24);
+            this.menuStrip1.TabIndex = 7;
+            this.menuStrip1.Text = "menuStarlink";
+            // 
+            // gameToolStripMenuItem
+            // 
+            this.gameToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.startToolStripMenuItem,
+            this.stopToolStripMenuItem});
+            this.gameToolStripMenuItem.Name = "gameToolStripMenuItem";
+            this.gameToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.gameToolStripMenuItem.Text = "Game";
+            // 
+            // optionsToolStripMenuItem
+            // 
+            this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.soundOnToolStripMenuItem,
+            this.soundOffToolStripMenuItem});
+            this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.optionsToolStripMenuItem.Text = "Options";
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.instructionsToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // startToolStripMenuItem
+            // 
+            this.startToolStripMenuItem.Name = "startToolStripMenuItem";
+            this.startToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.startToolStripMenuItem.Text = "Start";
+            // 
+            // stopToolStripMenuItem
+            // 
+            this.stopToolStripMenuItem.Name = "stopToolStripMenuItem";
+            this.stopToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.stopToolStripMenuItem.Text = "Stop";
+            // 
+            // soundOnToolStripMenuItem
+            // 
+            this.soundOnToolStripMenuItem.Name = "soundOnToolStripMenuItem";
+            this.soundOnToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.soundOnToolStripMenuItem.Text = "Sound on";
+            // 
+            // soundOffToolStripMenuItem
+            // 
+            this.soundOffToolStripMenuItem.Name = "soundOffToolStripMenuItem";
+            this.soundOffToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.soundOffToolStripMenuItem.Text = "Sound off";
+            // 
+            // instructionsToolStripMenuItem
+            // 
+            this.instructionsToolStripMenuItem.Name = "instructionsToolStripMenuItem";
+            this.instructionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.instructionsToolStripMenuItem.Text = "Instructions";
+            // 
             // frmStarlink
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 461);
+            this.ClientSize = new System.Drawing.Size(684, 490);
             this.Controls.Add(this.LblHealth);
             this.Controls.Add(this.txtHealth);
             this.Controls.Add(this.LblScore);
@@ -131,8 +209,11 @@
             this.Controls.Add(this.LblName);
             this.Controls.Add(this.PnlStarlink);
             this.Controls.Add(this.LblTitle);
+            this.Controls.Add(this.menuStrip1);
             this.Name = "frmStarlink";
             this.Text = "Starlink Saga";
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -148,6 +229,15 @@
         private System.Windows.Forms.Label LblScore;
         private System.Windows.Forms.TextBox txtHealth;
         private System.Windows.Forms.Label LblHealth;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem gameToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem startToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem stopToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem soundOnToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem soundOffToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem instructionsToolStripMenuItem;
     }
 }
 
