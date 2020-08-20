@@ -38,12 +38,12 @@
             this.LblHealth = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.gameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.startToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.soundOnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.soundOffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.instructionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -68,12 +68,13 @@
             this.PnlStarlink.Name = "PnlStarlink";
             this.PnlStarlink.Size = new System.Drawing.Size(504, 412);
             this.PnlStarlink.TabIndex = 1;
+            this.PnlStarlink.Paint += new System.Windows.Forms.PaintEventHandler(this.PnlStarlink_Paint);
             // 
             // LblName
             // 
             this.LblName.AutoSize = true;
             this.LblName.Font = new System.Drawing.Font("OCR A Std", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblName.Location = new System.Drawing.Point(568, 120);
+            this.LblName.Location = new System.Drawing.Point(569, 120);
             this.LblName.Name = "LblName";
             this.LblName.Size = new System.Drawing.Size(65, 20);
             this.LblName.TabIndex = 0;
@@ -149,6 +150,18 @@
             this.gameToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.gameToolStripMenuItem.Text = "Game";
             // 
+            // startToolStripMenuItem
+            // 
+            this.startToolStripMenuItem.Name = "startToolStripMenuItem";
+            this.startToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
+            this.startToolStripMenuItem.Text = "Start";
+            // 
+            // stopToolStripMenuItem
+            // 
+            this.stopToolStripMenuItem.Name = "stopToolStripMenuItem";
+            this.stopToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
+            this.stopToolStripMenuItem.Text = "Stop";
+            // 
             // optionsToolStripMenuItem
             // 
             this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -158,6 +171,18 @@
             this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.optionsToolStripMenuItem.Text = "Options";
             // 
+            // soundOnToolStripMenuItem
+            // 
+            this.soundOnToolStripMenuItem.Name = "soundOnToolStripMenuItem";
+            this.soundOnToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.soundOnToolStripMenuItem.Text = "Sound on";
+            // 
+            // soundOffToolStripMenuItem
+            // 
+            this.soundOffToolStripMenuItem.Name = "soundOffToolStripMenuItem";
+            this.soundOffToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.soundOffToolStripMenuItem.Text = "Sound off";
+            // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -166,34 +191,10 @@
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
             // 
-            // startToolStripMenuItem
-            // 
-            this.startToolStripMenuItem.Name = "startToolStripMenuItem";
-            this.startToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.startToolStripMenuItem.Text = "Start";
-            // 
-            // stopToolStripMenuItem
-            // 
-            this.stopToolStripMenuItem.Name = "stopToolStripMenuItem";
-            this.stopToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.stopToolStripMenuItem.Text = "Stop";
-            // 
-            // soundOnToolStripMenuItem
-            // 
-            this.soundOnToolStripMenuItem.Name = "soundOnToolStripMenuItem";
-            this.soundOnToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.soundOnToolStripMenuItem.Text = "Sound on";
-            // 
-            // soundOffToolStripMenuItem
-            // 
-            this.soundOffToolStripMenuItem.Name = "soundOffToolStripMenuItem";
-            this.soundOffToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.soundOffToolStripMenuItem.Text = "Sound off";
-            // 
             // instructionsToolStripMenuItem
             // 
             this.instructionsToolStripMenuItem.Name = "instructionsToolStripMenuItem";
-            this.instructionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.instructionsToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.instructionsToolStripMenuItem.Text = "Instructions";
             // 
             // frmStarlink

@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Satellite.cs" />
     <Compile Include="Starlink.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +81,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\planet1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alien1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
