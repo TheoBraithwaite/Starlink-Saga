@@ -19,19 +19,23 @@ namespace Starlink
         Point centreSatellite;
         public int score;
         //Create a constructor (initialises the values of the fields)
-        public Satellite()
+        public Satellite(int spacing)
         {
-            x = 10;
+            x = spacing;
             y = 10;
-            width = 40;
-            height = 40;
+            width = 20;
+            height = 20;
             //satImage contains the sat1.png image
-            satImage = Properties.Resources.planet1;
+            satImage = Properties.Resources.sat1;
             satRec = new Rectangle(x, y, width, height);
         }
         public void DrawSatellite(Graphics g)
         {
             g.DrawImage(satImage, satRec);
+        }
+        public void MoveSatellite()
+        {
+            satRec.Location = new Point(x, y);
         }
     }
 }

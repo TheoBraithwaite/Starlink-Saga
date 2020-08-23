@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.LblTitle = new System.Windows.Forms.Label();
             this.PnlStarlink = new System.Windows.Forms.Panel();
             this.LblName = new System.Windows.Forms.Label();
@@ -36,7 +37,7 @@
             this.LblScore = new System.Windows.Forms.Label();
             this.txtHealth = new System.Windows.Forms.TextBox();
             this.LblHealth = new System.Windows.Forms.Label();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menuStarlink = new System.Windows.Forms.MenuStrip();
             this.gameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.startToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,7 +46,8 @@
             this.soundOffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.instructionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
+            this.tmrSatellite = new System.Windows.Forms.Timer(this.components);
+            this.menuStarlink.SuspendLayout();
             this.SuspendLayout();
             // 
             // LblTitle
@@ -129,17 +131,17 @@
             this.LblHealth.TabIndex = 6;
             this.LblHealth.Text = "Health";
             // 
-            // menuStrip1
+            // menuStarlink
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuStarlink.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.gameToolStripMenuItem,
             this.optionsToolStripMenuItem,
             this.helpToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(684, 24);
-            this.menuStrip1.TabIndex = 7;
-            this.menuStrip1.Text = "menuStarlink";
+            this.menuStarlink.Location = new System.Drawing.Point(0, 0);
+            this.menuStarlink.Name = "menuStarlink";
+            this.menuStarlink.Size = new System.Drawing.Size(684, 24);
+            this.menuStarlink.TabIndex = 7;
+            this.menuStarlink.Text = "GameMenu";
             // 
             // gameToolStripMenuItem
             // 
@@ -153,13 +155,13 @@
             // startToolStripMenuItem
             // 
             this.startToolStripMenuItem.Name = "startToolStripMenuItem";
-            this.startToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
+            this.startToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.startToolStripMenuItem.Text = "Start";
             // 
             // stopToolStripMenuItem
             // 
             this.stopToolStripMenuItem.Name = "stopToolStripMenuItem";
-            this.stopToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
+            this.stopToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.stopToolStripMenuItem.Text = "Stop";
             // 
             // optionsToolStripMenuItem
@@ -174,13 +176,13 @@
             // soundOnToolStripMenuItem
             // 
             this.soundOnToolStripMenuItem.Name = "soundOnToolStripMenuItem";
-            this.soundOnToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.soundOnToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.soundOnToolStripMenuItem.Text = "Sound on";
             // 
             // soundOffToolStripMenuItem
             // 
             this.soundOffToolStripMenuItem.Name = "soundOffToolStripMenuItem";
-            this.soundOffToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.soundOffToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.soundOffToolStripMenuItem.Text = "Sound off";
             // 
             // helpToolStripMenuItem
@@ -194,8 +196,13 @@
             // instructionsToolStripMenuItem
             // 
             this.instructionsToolStripMenuItem.Name = "instructionsToolStripMenuItem";
-            this.instructionsToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.instructionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.instructionsToolStripMenuItem.Text = "Instructions";
+            // 
+            // tmrSatellite
+            // 
+            this.tmrSatellite.Enabled = true;
+            this.tmrSatellite.Tick += new System.EventHandler(this.tmrSatellite_Tick);
             // 
             // frmStarlink
             // 
@@ -210,11 +217,11 @@
             this.Controls.Add(this.LblName);
             this.Controls.Add(this.PnlStarlink);
             this.Controls.Add(this.LblTitle);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.menuStarlink);
             this.Name = "frmStarlink";
             this.Text = "Starlink Saga";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.menuStarlink.ResumeLayout(false);
+            this.menuStarlink.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -230,7 +237,7 @@
         private System.Windows.Forms.Label LblScore;
         private System.Windows.Forms.TextBox txtHealth;
         private System.Windows.Forms.Label LblHealth;
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip menuStarlink;
         private System.Windows.Forms.ToolStripMenuItem gameToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem startToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem stopToolStripMenuItem;
@@ -239,6 +246,7 @@
         private System.Windows.Forms.ToolStripMenuItem soundOffToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem instructionsToolStripMenuItem;
+        private System.Windows.Forms.Timer tmrSatellite;
     }
 }
 
