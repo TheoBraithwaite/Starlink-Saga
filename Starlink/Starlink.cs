@@ -14,6 +14,7 @@ namespace Starlink
     {
         Graphics g; //declare a graphics object called g
         Satellite[] sat1 = new Satellite[7];
+        Player pImage = new Player();
         Random yspeed = new Random();
 
         public frmStarlink()
@@ -30,6 +31,8 @@ namespace Starlink
         {
             //get the graphics used to paint on the panel control
             g = e.Graphics;
+            //Call the Player class's DrawPlayer method to draw the spacecraft image, craft1
+            pImage.DrawPlayer(g);
             //call the Satellite class's DrawSatellite method to draw the image sat1 
             for (int i = 0; i < 7; i++)
             {
