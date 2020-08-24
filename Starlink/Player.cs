@@ -29,5 +29,36 @@ namespace Starlink
         {
             g.DrawImage(pImage, pRec);
         }
+        public void MovePlayer(string move)
+        {
+            {
+                if (move == "right")
+                {
+                    if (pRec.Location.X > 450) //Is spaceship within 50 of right side
+                    {
+                        x = 450;
+                        pRec.Location = new Point(x, y);
+                    }
+                    else
+                    {
+                        x += 5;
+                        pRec.Location = new Point(x, y);
+                    }
+                }
+                if (move == "left")
+                {
+                    if (pRec.Location.X < 10) //Is spaceship within 10 of left side
+                    {
+                        x = 10;
+                        pRec.Location = new Point(x, y);
+                    }
+                    else
+                    {
+                        x -= 5;
+                        pRec.Location = new Point(x, y);
+                    }
+                }
+            }
+        }
     }
 }

@@ -16,6 +16,8 @@ namespace Starlink
         Satellite[] sat1 = new Satellite[7];
         Player pImage = new Player();
         Random yspeed = new Random();
+        bool left, right;
+        string move;
 
         public frmStarlink()
         {
@@ -58,6 +60,38 @@ namespace Starlink
                 }
             }
             PnlStarlink.Invalidate();//makes the paint event fire to redraw the panel
+        }
+
+        private void frmStarlink_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Left) { left = true; }
+            if (e.KeyData == Keys.Right) { right = true; }
+        }
+
+        private void tmrPlayer_Tick(object sender, EventArgs e)
+        {
+            if (right) // if right arrow key pressed
+            {
+                move = "right";
+                pImage.MovePlayer(move);
+            }
+            if (left) // if left arrow key pressed
+            {
+                move = "left";
+                pImage.MovePlayer(move);
+            }
+        }
+
+        private void frmStarlink_Load(object sender, EventArgs e)
+        {
+            txtName.Enabled = false;
+            txtHealth.Enabled = false;
+        }
+
+        private void frmStarlink_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Left) { left = false; }
+            if (e.KeyData == Keys.Right) { right = false; }
         }
     }
 }
