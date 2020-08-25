@@ -18,6 +18,7 @@ namespace Starlink
         Random yspeed = new Random();
         bool left, right;
         string move;
+        int score, health;
 
         public frmStarlink()
         {
@@ -52,11 +53,18 @@ namespace Starlink
             for (int i = 0; i < 7; i++)
             {
                 sat1[i].MoveSatellite();
-
+                if (pImage.pRec.IntersectsWith(sat1[i].satRec))
+                {
+                    //Reset planet[i] back to top of panel
+                    sat1[i].y = 30; //Set y value of planetRec
+                    health -= 1; //Lose a life
+                    txtHealth.Text = health.ToString(); //Display number of lives
+                    CheckLives();
+                }
                 //if a satellite reaches the bottom of the Game Area reposition it at the top
                 if (sat1[i].y >= PnlStarlink.Height)
                 {
-                    sat1[i].y = 30;
+                        sat1[i].y = 30;
                 }
             }
             PnlStarlink.Invalidate();//makes the paint event fire to redraw the panel
@@ -84,14 +92,32 @@ namespace Starlink
 
         private void frmStarlink_Load(object sender, EventArgs e)
         {
-            txtName.Enabled = false;
-            txtHealth.Enabled = false;
+            tmrPlayer.Enabled = false;
+            tmrSatellite.Enabled = false;
+        }
+
+        private void MnuStart_Click(object sender, EventArgs e)
+        {
+            score = 0;
+            LblScore.Text = score.ToString();
+            health = int.Parse(txtHealth.Text); //Pass the health of the spacecraft to lives variable
+            tmrPlayer.Enabled = true;
+            tmrSatellite.Enabled = true;
         }
 
         private void frmStarlink_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyData == Keys.Left) { left = false; }
             if (e.KeyData == Keys.Right) { right = false; }
+        }
+        private void CheckLives()
+        {
+            if (health == 0)
+            {
+                tmrPlayer.Enabled = false;
+                tmrSatellite.Enabled = false;
+                MessageBox.Show("Game Over!");
+            }
         }
     }
 }

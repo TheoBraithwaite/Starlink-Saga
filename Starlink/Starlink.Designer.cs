@@ -39,8 +39,8 @@
             this.LblHealth = new System.Windows.Forms.Label();
             this.menuStarlink = new System.Windows.Forms.MenuStrip();
             this.gameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.startToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.stopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuStart = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuStop = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.soundOnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.soundOffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -119,7 +119,7 @@
             this.txtHealth.Name = "txtHealth";
             this.txtHealth.Size = new System.Drawing.Size(40, 21);
             this.txtHealth.TabIndex = 5;
-            this.txtHealth.Text = "100";
+            this.txtHealth.Text = "3";
             this.txtHealth.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // LblHealth
@@ -147,23 +147,24 @@
             // gameToolStripMenuItem
             // 
             this.gameToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.startToolStripMenuItem,
-            this.stopToolStripMenuItem});
+            this.MnuStart,
+            this.MnuStop});
             this.gameToolStripMenuItem.Name = "gameToolStripMenuItem";
             this.gameToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.gameToolStripMenuItem.Text = "Game";
             // 
-            // startToolStripMenuItem
+            // MnuStart
             // 
-            this.startToolStripMenuItem.Name = "startToolStripMenuItem";
-            this.startToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
-            this.startToolStripMenuItem.Text = "Start";
+            this.MnuStart.Name = "MnuStart";
+            this.MnuStart.Size = new System.Drawing.Size(180, 22);
+            this.MnuStart.Text = "Start";
+            this.MnuStart.Click += new System.EventHandler(this.MnuStart_Click);
             // 
-            // stopToolStripMenuItem
+            // MnuStop
             // 
-            this.stopToolStripMenuItem.Name = "stopToolStripMenuItem";
-            this.stopToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
-            this.stopToolStripMenuItem.Text = "Stop";
+            this.MnuStop.Name = "MnuStop";
+            this.MnuStop.Size = new System.Drawing.Size(180, 22);
+            this.MnuStop.Text = "Stop";
             // 
             // optionsToolStripMenuItem
             // 
@@ -207,6 +208,7 @@
             // 
             // tmrPlayer
             // 
+            this.tmrPlayer.Enabled = true;
             this.tmrPlayer.Tick += new System.EventHandler(this.tmrPlayer_Tick);
             // 
             // frmStarlink
@@ -223,6 +225,7 @@
             this.Controls.Add(this.PnlStarlink);
             this.Controls.Add(this.LblTitle);
             this.Controls.Add(this.menuStarlink);
+            this.KeyPreview = true;
             this.Name = "frmStarlink";
             this.Text = "Starlink Saga";
             this.Load += new System.EventHandler(this.frmStarlink_Load);
@@ -247,8 +250,8 @@
         private System.Windows.Forms.Label LblHealth;
         private System.Windows.Forms.MenuStrip menuStarlink;
         private System.Windows.Forms.ToolStripMenuItem gameToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem startToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem stopToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem MnuStart;
+        private System.Windows.Forms.ToolStripMenuItem MnuStop;
         private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem soundOnToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem soundOffToolStripMenuItem;
