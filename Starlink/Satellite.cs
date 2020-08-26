@@ -18,6 +18,8 @@ namespace Starlink
         public Matrix matrixSatellite;
         Point centreSatellite;
         public int score;
+        public int satRotate;
+        Point centre;
         //Create a constructor (initialises the values of the fields)
         public Satellite(int spacing)
         {
@@ -31,6 +33,15 @@ namespace Starlink
         }
         public void DrawSatellite(Graphics g)
         {
+            //find the centre point of spaceRec
+            centre = new Point(satRec.X + width / 2, satRec.Y + width / 2);
+            //instantiate a Matrix object called matrix
+            matrixSatellite = new Matrix();
+            //rotate the matrix (spaceRec) about its centre
+            matrixSatellite.RotateAt(satRotate, centre);
+            //Set the current draw location to the rotated matrix point
+            g.Transform = matrixSatellite;
+            //draw the spaceship
             g.DrawImage(satImage, satRec);
         }
         public void MoveSatellite()

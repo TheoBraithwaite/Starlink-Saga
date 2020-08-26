@@ -72,6 +72,7 @@
             this.PnlStarlink.Size = new System.Drawing.Size(504, 412);
             this.PnlStarlink.TabIndex = 1;
             this.PnlStarlink.Paint += new System.Windows.Forms.PaintEventHandler(this.PnlStarlink_Paint);
+            this.PnlStarlink.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PnlStarlink_MouseMove);
             // 
             // LblName
             // 
@@ -156,14 +157,14 @@
             // MnuStart
             // 
             this.MnuStart.Name = "MnuStart";
-            this.MnuStart.Size = new System.Drawing.Size(180, 22);
+            this.MnuStart.Size = new System.Drawing.Size(98, 22);
             this.MnuStart.Text = "Start";
             this.MnuStart.Click += new System.EventHandler(this.MnuStart_Click);
             // 
             // MnuStop
             // 
             this.MnuStop.Name = "MnuStop";
-            this.MnuStop.Size = new System.Drawing.Size(180, 22);
+            this.MnuStop.Size = new System.Drawing.Size(98, 22);
             this.MnuStop.Text = "Stop";
             // 
             // optionsToolStripMenuItem

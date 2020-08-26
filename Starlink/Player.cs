@@ -14,6 +14,9 @@ namespace Starlink
         public Image pImage; //Variable for the planet's image
         public Rectangle pRec;//variable for a rectangle to place our image in
         public int score;
+        public int rotationAngle;
+        public Matrix matrix;
+        Point centre;
         //Create a constructor (initialises the values of the fields)
         public Player()
         {
@@ -26,39 +29,54 @@ namespace Starlink
             pRec = new Rectangle(x, y, width, height);
         }
         public void DrawPlayer(Graphics g)
-        {
-            g.DrawImage(pImage, pRec);
-        }
+            {
+                //find the centre point of spaceRec
+                centre = new Point(pRec.X + width / 2, pRec.Y + width / 2);
+                //instantiate a Matrix object called matrix
+                matrix = new Matrix();
+                //rotate the matrix (spaceRec) about its centre
+                matrix.RotateAt(rotationAngle, centre);
+                //Set the current draw location to the rotated matrix point
+                g.Transform = matrix;
+                //draw the spaceship
+
+                g.DrawImage(pImage, pRec);
+            }
         public void MovePlayer(string move)
         {
-            {
-                if (move == "right")
-                {
-                    if (pRec.Location.X > 450) //Is spaceship within 50 of right side
-                    {
-                        x = 450;
-                        pRec.Location = new Point(x, y);
-                    }
-                    else
-                    {
-                        x += 5;
-                        pRec.Location = new Point(x, y);
-                    }
-                }
-                if (move == "left")
-                {
-                    if (pRec.Location.X < 10) //Is spaceship within 10 of left side
-                    {
-                        x = 10;
-                        pRec.Location = new Point(x, y);
-                    }
-                    else
-                    {
-                        x -= 5;
-                        pRec.Location = new Point(x, y);
-                    }
-                }
-            }
+            //{
+            //    if (move == "right")
+            //    {
+            //        if (pRec.Location.X > 450) //Is spaceship within 50 of right side
+            //        {
+            //            x = 450;
+            //            pRec.Location = new Point(x, y);
+            //        }
+            //        else
+            //        {
+            //            x += 5;
+            //            pRec.Location = new Point(x, y);
+            //        }
+            //    }
+            //    if (move == "left")
+            //    {
+            //        if (pRec.Location.X < 10) //Is spaceship within 10 of left side
+            //        {
+            //            x = 10;
+            //            pRec.Location = new Point(x, y);
+            //        }
+            //        else
+            //        {
+            //            x -= 5;
+            //            pRec.Location = new Point(x, y);
+            //        }
+            //    }
+            //}
+        }
+        public void mousePlayer(int mouseX, int mouseY)
+        {
+            pRec.X = mouseX - (pRec.Width / 2);
+            pRec.Y = mouseY - (pRec.Height / 2);
         }
     }
 }

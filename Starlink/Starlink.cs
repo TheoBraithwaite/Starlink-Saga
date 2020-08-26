@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -78,16 +79,24 @@ namespace Starlink
 
         private void tmrPlayer_Tick(object sender, EventArgs e)
         {
-            if (right) // if right arrow key pressed
+            if (left)
             {
-                move = "right";
-                pImage.MovePlayer(move);
+                pImage.rotationAngle -= 5;
             }
-            if (left) // if left arrow key pressed
+            if (right)
             {
-                move = "left";
-                pImage.MovePlayer(move);
+                pImage.rotationAngle +=5;
             }
+            //if (right) // if right arrow key pressed
+            //{
+            //    move = "right";
+            //    pImage.MovePlayer(move);
+            //}
+            //if (left) // if left arrow key pressed
+            //{
+            //    move = "left";
+            //    pImage.MovePlayer(move);
+            //}
         }
 
         private void frmStarlink_Load(object sender, EventArgs e)
@@ -103,6 +112,11 @@ namespace Starlink
             health = int.Parse(txtHealth.Text); //Pass the health of the spacecraft to lives variable
             tmrPlayer.Enabled = true;
             tmrSatellite.Enabled = true;
+        }
+
+        private void PnlStarlink_MouseMove(object sender, MouseEventArgs e)
+        {
+            pImage.mousePlayer(e.X, e.Y);
         }
 
         private void frmStarlink_KeyUp(object sender, KeyEventArgs e)
