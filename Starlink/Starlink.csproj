@@ -49,6 +49,8 @@
   <ItemGroup>
     <Compile Include="Player.cs" />
     <Compile Include="Satellite.cs" />
+    <Compile Include="SatLeft.cs" />
+    <Compile Include="SatRight.cs" />
     <Compile Include="Starlink.cs">
       <SubType>Form</SubType>
     </Compile>

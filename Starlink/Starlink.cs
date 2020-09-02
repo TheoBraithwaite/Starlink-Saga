@@ -15,8 +15,12 @@ namespace Starlink
     {
         Graphics g; //declare a graphics object called g
         Satellite[] sat1 = new Satellite[7];
+        SatLeft[] sat2 = new SatLeft[7];
+        SatRight[] sat3 = new SatRight[7];
         Player pImage = new Player();
         Random yspeed = new Random();
+        Random xspeed1 = new Random();
+        Random xspeed2 = new Random();
         bool left, right;
         string move;
         int score, health;
@@ -28,6 +32,16 @@ namespace Starlink
             {
                 int x = 10 + (i * 75);
                 sat1[i] = new Satellite(x);
+            }
+            for (int l = 0; l < 7; l++)
+            {
+                int y = 10 + (l * 75);
+                sat2[l] = new SatLeft(y);
+            }
+            for (int r = 0; l < 7; l++)
+            {
+                int y = 10 + (r * 75);
+                sat3[r] = new SatRight(y);
             }
         }
 
@@ -47,6 +61,24 @@ namespace Starlink
                 //call the Planet class's drawPlanet method to draw the images
                 sat1[i].DrawSatellite(g);
             }
+            for (int l = 0; l < 7; l++)
+            {
+                // generate a random number from 5 to 20 and put it in rndmspeed
+                int rndmspeed = xspeed1.Next(5, 20);
+                sat2[l].x += rndmspeed;
+
+                //call the Planet class's drawPlanet method to draw the images
+                sat2[l].DrawSatLeft(g);
+            }
+            for (int r = 0; r < 7; r++)
+            {
+                // generate a random number from 5 to 20 and put it in rndmspeed
+                int rndmspeed = xspeed2.Next(5, 20);
+                sat3[r].x += rndmspeed;
+
+                //call the Planet class's drawPlanet method to draw the images
+                sat3[r].DrawSatRight(g);
+            }
         }
 
         private void tmrSatellite_Tick(object sender, EventArgs e)
@@ -54,6 +86,9 @@ namespace Starlink
             for (int i = 0; i < 7; i++)
             {
                 sat1[i].MoveSatellite();
+                sat2[i].MoveSatellite(); //Move when the timer ticks
+                sat3[i].MoveSatellite();
+
                 if (pImage.pRec.IntersectsWith(sat1[i].satRec))
                 {
                     //Reset planet[i] back to top of panel
@@ -62,10 +97,22 @@ namespace Starlink
                     txtHealth.Text = health.ToString(); //Display number of lives
                     CheckLives();
                 }
+                if (pImage.pRec.IntersectsWith(sat2[i].satRec))
+                {
+                    //Reset planet[i] back to top of panel
+                    sat2[i].x = 10; //Set y value of planetRec
+                    health -= 1; //Lose a life
+                    txtHealth.Text = health.ToString(); //Display number of lives
+                    CheckLives();
+                }
                 //if a satellite reaches the bottom of the Game Area reposition it at the top
                 if (sat1[i].y >= PnlStarlink.Height)
                 {
                         sat1[i].y = 30;
+                }
+                if (sat2[i].x >= PnlStarlink.Width)
+                {
+                    sat2[i].x = 10;
                 }
             }
             PnlStarlink.Invalidate();//makes the paint event fire to redraw the panel
