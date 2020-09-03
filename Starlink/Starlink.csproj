@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Laser.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Satellite.cs" />
     <Compile Include="SatLeft.cs" />
@@ -90,6 +91,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\alien1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\laser1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

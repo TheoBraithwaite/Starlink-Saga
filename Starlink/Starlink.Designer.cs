@@ -48,6 +48,7 @@
             this.instructionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tmrSatellite = new System.Windows.Forms.Timer(this.components);
             this.tmrPlayer = new System.Windows.Forms.Timer(this.components);
+            this.tmrLaser = new System.Windows.Forms.Timer(this.components);
             this.menuStarlink.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -212,6 +213,11 @@
             this.tmrPlayer.Enabled = true;
             this.tmrPlayer.Tick += new System.EventHandler(this.tmrPlayer_Tick);
             // 
+            // tmrLaser
+            // 
+            this.tmrLaser.Enabled = true;
+            this.tmrLaser.Tick += new System.EventHandler(this.tmrLaser_Tick);
+            // 
             // frmStarlink
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -260,6 +266,7 @@
         private System.Windows.Forms.ToolStripMenuItem instructionsToolStripMenuItem;
         private System.Windows.Forms.Timer tmrSatellite;
         private System.Windows.Forms.Timer tmrPlayer;
+        private System.Windows.Forms.Timer tmrLaser;
     }
 }
 

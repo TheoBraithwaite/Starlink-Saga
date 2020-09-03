@@ -23,7 +23,7 @@ namespace Starlink
         //Create a constructor (initialises the values of the fields)
         public SatRight(int spacing)
         {
-            x = 10;
+            x = 460;
             y = spacing;
             width = 20;
             height = 20;

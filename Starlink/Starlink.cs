@@ -21,6 +21,8 @@ namespace Starlink
         Random yspeed = new Random();
         Random xspeed1 = new Random();
         Random xspeed2 = new Random();
+        //declare a list  missiles from the Missile class
+        List<Laser> lasers = new List<Laser>();
         bool left, right;
         string move;
         int score, health;
@@ -38,7 +40,7 @@ namespace Starlink
                 int y = 10 + (l * 75);
                 sat2[l] = new SatLeft(y);
             }
-            for (int r = 0; l < 7; l++)
+            for (int r = 0; r < 7; r++)
             {
                 int y = 10 + (r * 75);
                 sat3[r] = new SatRight(y);
@@ -74,10 +76,15 @@ namespace Starlink
             {
                 // generate a random number from 5 to 20 and put it in rndmspeed
                 int rndmspeed = xspeed2.Next(5, 20);
-                sat3[r].x += rndmspeed;
+                sat3[r].x -= rndmspeed;
 
                 //call the Planet class's drawPlanet method to draw the images
                 sat3[r].DrawSatRight(g);
+            }
+            foreach(Laser L in lasers)
+            {
+                L.drawlaser(g);
+                L.movelaser(g);
             }
         }
 
@@ -105,6 +112,14 @@ namespace Starlink
                     txtHealth.Text = health.ToString(); //Display number of lives
                     CheckLives();
                 }
+                if (pImage.pRec.IntersectsWith(sat3[i].satRec))
+                {
+                    //Reset planet[i] back to top of panel
+                    sat3[i].x = 460; //Set y value of planetRec
+                    health -= 1; //Lose a life
+                    txtHealth.Text = health.ToString(); //Display number of lives
+                    CheckLives();
+                }
                 //if a satellite reaches the bottom of the Game Area reposition it at the top
                 if (sat1[i].y >= PnlStarlink.Height)
                 {
@@ -113,6 +128,10 @@ namespace Starlink
                 if (sat2[i].x >= PnlStarlink.Width)
                 {
                     sat2[i].x = 10;
+                }
+                if (sat3[i].x <= 0)
+                {
+                    sat3[i].x = 460;
                 }
             }
             PnlStarlink.Invalidate();//makes the paint event fire to redraw the panel
@@ -150,6 +169,7 @@ namespace Starlink
         {
             tmrPlayer.Enabled = false;
             tmrSatellite.Enabled = false;
+            //pImage.x = 200;
         }
 
         private void MnuStart_Click(object sender, EventArgs e)
@@ -164,6 +184,11 @@ namespace Starlink
         private void PnlStarlink_MouseMove(object sender, MouseEventArgs e)
         {
             pImage.mousePlayer(e.X, e.Y);
+        }
+
+        private void tmrLaser_Tick(object sender, EventArgs e)
+        {
+
         }
 
         private void frmStarlink_KeyUp(object sender, KeyEventArgs e)
