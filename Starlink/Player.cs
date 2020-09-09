@@ -20,8 +20,8 @@ namespace Starlink
         //Create a constructor (initialises the values of the fields)
         public Player()
         {
-            x = 230;
-            y = 370;
+            //x = 230;
+            //y = 370;
             width = 40;
             height = 40;
             //pImage contains the player image, craft1

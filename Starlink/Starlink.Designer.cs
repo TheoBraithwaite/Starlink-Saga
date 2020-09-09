@@ -73,6 +73,7 @@
             this.PnlStarlink.Size = new System.Drawing.Size(504, 412);
             this.PnlStarlink.TabIndex = 1;
             this.PnlStarlink.Paint += new System.Windows.Forms.PaintEventHandler(this.PnlStarlink_Paint);
+            this.PnlStarlink.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PnlStarlink_MouseDown);
             this.PnlStarlink.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PnlStarlink_MouseMove);
             // 
             // LblName

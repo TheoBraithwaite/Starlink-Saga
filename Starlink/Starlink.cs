@@ -81,11 +81,12 @@ namespace Starlink
                 //call the Planet class's drawPlanet method to draw the images
                 sat3[r].DrawSatRight(g);
             }
-            foreach(Laser L in lasers)
+            foreach(Laser P in lasers)
             {
-                L.drawlaser(g);
-                L.movelaser(g);
+                P.drawlaser(g);
+                P.movelaser(g);
             }
+            Invalidate();
         }
 
         private void tmrSatellite_Tick(object sender, EventArgs e)
@@ -179,6 +180,8 @@ namespace Starlink
             health = int.Parse(txtHealth.Text); //Pass the health of the spacecraft to lives variable
             tmrPlayer.Enabled = true;
             tmrSatellite.Enabled = true;
+            txtName.Enabled = false;
+            txtHealth.Enabled = false;
         }
 
         private void PnlStarlink_MouseMove(object sender, MouseEventArgs e)
@@ -189,6 +192,14 @@ namespace Starlink
         private void tmrLaser_Tick(object sender, EventArgs e)
         {
 
+        }
+
+        private void PnlStarlink_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                lasers.Add(new Laser(pImage.pRec, pImage.rotationAngle));
+            }
         }
 
         private void frmStarlink_KeyUp(object sender, KeyEventArgs e)

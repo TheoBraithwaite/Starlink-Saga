@@ -15,8 +15,8 @@ namespace Starlink
         public double xSpeed, ySpeed;
         public Image laser;//variable for the laser's image
         public Rectangle laserRec;//variable for a rectangle to place our image in
-        public Matrix matrixLaser;//matrix to enable us to rotate laser in the same angle as the spaceship
-        Point centreLaser;//centre of laser
+        public Matrix matrixlaser;//matrix to enable us to rotate laser in the same angle as the spaceship
+        Point centrelaser;//centre of laser
         // in the following constructor we pass in the values of spaceRec and the rotation angle of the spaceship
         // this gives us the position of the spaceship which we can then use to place the
         // laser where the spaceship is located and at the correct angle
@@ -30,8 +30,8 @@ namespace Starlink
             xSpeed = 30 * (Math.Cos((laserRotate - 90) * Math.PI / 180));
             ySpeed = 30 * (Math.Sin((laserRotate + 90) * Math.PI / 180));
             //calculate x,y to move laser to middle of spaceship in drawlaser method
-            x = spaceRec.X + spaceRec.Width / 2;
-            y = spaceRec.Y + spaceRec.Height / 2;
+            x = laserRec.X + laserRec.Width / 2;
+            y = laserRec.Y + laserRec.Height / 2;
             //pass laserRotate angle to laserRotated so that it can be used in the drawlaser method
             laserRotated = laserRotate;
         }
@@ -39,13 +39,13 @@ namespace Starlink
         public void drawlaser(Graphics g)
         {
             //centre laser 
-            centreLaser = new Point(x, y);
+            centrelaser = new Point(x, y);
             //instantiate a Matrix object called matrixlaser
-            matrixLaser = new Matrix();
+            matrixlaser = new Matrix();
             //rotate the matrix (in this case laserRec) about its centre
-            matrixLaser.RotateAt(laserRotated, centreLaser);
+            matrixlaser.RotateAt(laserRotated, centrelaser);
             //Set the current draw location to the rotated matrix point i.e. where laserRec is now
-            g.Transform = matrixLaser;
+            g.Transform = matrixlaser;
             //Draw the laser
             g.DrawImage(laser, laserRec);
 
