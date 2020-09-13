@@ -22,8 +22,8 @@ namespace Starlink
         // laser where the spaceship is located and at the correct angle
         public Laser(Rectangle pRec, int laserRotate)
         {
-            width = 20;
-            height = 40;
+            width = 5;
+            height = ;
             laser = Properties.Resources.laser1;
             laserRec = new Rectangle(x, y, width, height);
             //this code works out the speed of the laser to be used in the movelaser method

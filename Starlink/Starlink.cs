@@ -189,11 +189,6 @@ namespace Starlink
             pImage.mousePlayer(e.X, e.Y);
         }
 
-        private void tmrLaser_Tick(object sender, EventArgs e)
-        {
-
-        }
-
         private void PnlStarlink_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
