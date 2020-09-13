@@ -20,7 +20,7 @@ namespace Starlink
         // in the following constructor we pass in the values of spaceRec and the rotation angle of the spaceship
         // this gives us the position of the spaceship which we can then use to place the
         // laser where the spaceship is located and at the correct angle
-        public Laser(Rectangle spaceRec, int laserRotate)
+        public Laser(Rectangle pRec, int laserRotate)
         {
             width = 20;
             height = 40;
@@ -30,8 +30,8 @@ namespace Starlink
             xSpeed = 30 * (Math.Cos((laserRotate - 90) * Math.PI / 180));
             ySpeed = 30 * (Math.Sin((laserRotate + 90) * Math.PI / 180));
             //calculate x,y to move laser to middle of spaceship in drawlaser method
-            x = laserRec.X + laserRec.Width / 2;
-            y = laserRec.Y + laserRec.Height / 2;
+            x = pRec.X + pRec.Width / 2;
+            y = pRec.Y + pRec.Height / 2;
             //pass laserRotate angle to laserRotated so that it can be used in the drawlaser method
             laserRotated = laserRotate;
         }
