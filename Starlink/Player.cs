@@ -25,7 +25,7 @@ namespace Starlink
             width = 40;
             height = 40;
             //pImage contains the player image, craft1
-            pImage = Properties.Resources.alien1;
+            pImage = Properties.Resources.starfighter;
             pRec = new Rectangle(x, y, width, height);
         }
         public void DrawPlayer(Graphics g)

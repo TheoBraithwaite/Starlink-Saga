@@ -73,6 +73,26 @@ namespace Starlink.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap earth {
+            get {
+                object obj = ResourceManager.GetObject("earth", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap earth1 {
+            get {
+                object obj = ResourceManager.GetObject("earth1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap laser1 {
             get {
                 object obj = ResourceManager.GetObject("laser1", resourceCulture);
@@ -96,6 +116,36 @@ namespace Starlink.Properties {
         internal static System.Drawing.Bitmap sat1 {
             get {
                 object obj = ResourceManager.GetObject("sat1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap spacex {
+            get {
+                object obj = ResourceManager.GetObject("spacex", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap spacex2 {
+            get {
+                object obj = ResourceManager.GetObject("spacex2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap starfighter {
+            get {
+                object obj = ResourceManager.GetObject("starfighter", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

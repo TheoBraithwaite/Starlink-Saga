@@ -25,10 +25,10 @@ namespace Starlink
         {
             x = 10;
             y = spacing;
-            width = 20;
-            height = 20;
+            width = 60;
+            height = 60;
             //satImage contains the sat1.png image
-            satImage = Properties.Resources.sat1;
+            satImage = Properties.Resources.spacex2;
             satRec = new Rectangle(x, y, width, height);
         }
         public void DrawSatLeft(Graphics g)

@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.LblTitle = new System.Windows.Forms.Label();
-            this.PnlStarlink = new System.Windows.Forms.Panel();
             this.LblName = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.Scoring = new System.Windows.Forms.Label();
@@ -49,6 +48,7 @@
             this.tmrSatellite = new System.Windows.Forms.Timer(this.components);
             this.tmrPlayer = new System.Windows.Forms.Timer(this.components);
             this.tmrLaser = new System.Windows.Forms.Timer(this.components);
+            this.PnlStarlink = new System.Windows.Forms.Panel();
             this.menuStarlink.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,7 +57,7 @@
             this.LblTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.LblTitle.Font = new System.Drawing.Font("OCR A Std", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblTitle.Location = new System.Drawing.Point(12, 27);
             this.LblTitle.Name = "LblTitle";
             this.LblTitle.Size = new System.Drawing.Size(475, 42);
@@ -65,24 +65,13 @@
             this.LblTitle.Text = "The Starlink Saga";
             this.LblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // PnlStarlink
-            // 
-            this.PnlStarlink.BackColor = System.Drawing.Color.Silver;
-            this.PnlStarlink.Location = new System.Drawing.Point(12, 70);
-            this.PnlStarlink.Name = "PnlStarlink";
-            this.PnlStarlink.Size = new System.Drawing.Size(504, 412);
-            this.PnlStarlink.TabIndex = 1;
-            this.PnlStarlink.Paint += new System.Windows.Forms.PaintEventHandler(this.PnlStarlink_Paint);
-            this.PnlStarlink.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PnlStarlink_MouseDown);
-            this.PnlStarlink.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PnlStarlink_MouseMove);
-            // 
             // LblName
             // 
             this.LblName.AutoSize = true;
-            this.LblName.Font = new System.Drawing.Font("OCR A Std", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblName.Location = new System.Drawing.Point(569, 120);
             this.LblName.Name = "LblName";
-            this.LblName.Size = new System.Drawing.Size(65, 20);
+            this.LblName.Size = new System.Drawing.Size(65, 24);
             this.LblName.TabIndex = 0;
             this.LblName.Text = "Name";
             // 
@@ -96,10 +85,10 @@
             // Scoring
             // 
             this.Scoring.AutoSize = true;
-            this.Scoring.Font = new System.Drawing.Font("OCR A Std", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Scoring.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Scoring.Location = new System.Drawing.Point(564, 214);
             this.Scoring.Name = "Scoring";
-            this.Scoring.Size = new System.Drawing.Size(79, 20);
+            this.Scoring.Size = new System.Drawing.Size(65, 24);
             this.Scoring.TabIndex = 3;
             this.Scoring.Text = "Score";
             // 
@@ -107,7 +96,7 @@
             // 
             this.LblScore.BackColor = System.Drawing.Color.White;
             this.LblScore.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LblScore.Font = new System.Drawing.Font("OCR A Std", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblScore.Location = new System.Drawing.Point(585, 234);
             this.LblScore.Name = "LblScore";
             this.LblScore.Size = new System.Drawing.Size(40, 20);
@@ -117,10 +106,10 @@
             // 
             // txtHealth
             // 
-            this.txtHealth.Font = new System.Drawing.Font("OCR A Std", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHealth.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHealth.Location = new System.Drawing.Point(585, 329);
             this.txtHealth.Name = "txtHealth";
-            this.txtHealth.Size = new System.Drawing.Size(40, 21);
+            this.txtHealth.Size = new System.Drawing.Size(40, 20);
             this.txtHealth.TabIndex = 5;
             this.txtHealth.Text = "3";
             this.txtHealth.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -128,10 +117,10 @@
             // LblHealth
             // 
             this.LblHealth.AutoSize = true;
-            this.LblHealth.Font = new System.Drawing.Font("OCR A Std", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblHealth.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblHealth.Location = new System.Drawing.Point(557, 306);
             this.LblHealth.Name = "LblHealth";
-            this.LblHealth.Size = new System.Drawing.Size(93, 20);
+            this.LblHealth.Size = new System.Drawing.Size(70, 24);
             this.LblHealth.TabIndex = 6;
             this.LblHealth.Text = "Health";
             // 
@@ -218,6 +207,19 @@
             // 
             this.tmrLaser.Enabled = true;
             this.tmrLaser.Tick += new System.EventHandler(this.tmrLaser_Tick);
+            // 
+            // PnlStarlink
+            // 
+            this.PnlStarlink.BackColor = System.Drawing.Color.Silver;
+            this.PnlStarlink.BackgroundImage = global::Starlink.Properties.Resources.earth1;
+            this.PnlStarlink.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.PnlStarlink.Location = new System.Drawing.Point(12, 70);
+            this.PnlStarlink.Name = "PnlStarlink";
+            this.PnlStarlink.Size = new System.Drawing.Size(504, 412);
+            this.PnlStarlink.TabIndex = 1;
+            this.PnlStarlink.Paint += new System.Windows.Forms.PaintEventHandler(this.PnlStarlink_Paint);
+            this.PnlStarlink.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PnlStarlink_MouseDown);
+            this.PnlStarlink.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PnlStarlink_MouseMove);
             // 
             // frmStarlink
             // 
