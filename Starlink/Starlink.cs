@@ -124,7 +124,7 @@ namespace Starlink
                 //if a satellite reaches the bottom of the Game Area reposition it at the top
                 if (sat1[i].y >= PnlStarlink.Height)
                 {
-                        sat1[i].y = 30;
+                    sat1[i].y = 30;
                 }
                 if (sat2[i].x >= PnlStarlink.Width)
                 {
@@ -194,6 +194,46 @@ namespace Starlink
             if (e.Button == MouseButtons.Left)
             {
                 lasers.Add(new Laser(pImage.pRec, pImage.rotationAngle));
+            }
+        }
+
+        private void tmrLaser_Tick(object sender, EventArgs e)
+        {
+            foreach(Satellite s1 in sat1)
+            {
+                foreach(Laser L in lasers)
+                    if(s1.satRec.IntersectsWith(L.laserRec))
+                    {
+                        score += 1;
+                        LblScore.Text = score.ToString();
+                        s1.y = 30;
+                        lasers.Remove(L);
+                        break;
+                    }
+            }
+            foreach (SatLeft s2 in sat2)
+            {
+                foreach (Laser L in lasers)
+                    if (s2.satRec.IntersectsWith(L.laserRec))
+                    {
+                        score += 1;
+                        LblScore.Text = score.ToString();
+                        s2.x = 10;
+                        lasers.Remove(L);
+                        break;
+                    }
+            }
+            foreach (SatRight s3 in sat3)
+            {
+                foreach (Laser L in lasers)
+                    if (s3.satRec.IntersectsWith(L.laserRec))
+                    {
+                        score += 1;
+                        LblScore.Text = score.ToString();
+                        s3.x = 460;
+                        lasers.Remove(L);
+                        break;
+                    }
             }
         }
 

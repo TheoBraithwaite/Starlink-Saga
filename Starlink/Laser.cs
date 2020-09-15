@@ -23,8 +23,8 @@ namespace Starlink
         public Laser(Rectangle pRec, int laserRotate)
         {
             width = 5;
-            height = ;
-            laser = Properties.Resources.laser1;
+            height = 20;
+            laser = Properties.Resources.laser2;
             laserRec = new Rectangle(x, y, width, height);
             //this code works out the speed of the laser to be used in the movelaser method
             xSpeed = 30 * (Math.Cos((laserRotate - 90) * Math.PI / 180));
