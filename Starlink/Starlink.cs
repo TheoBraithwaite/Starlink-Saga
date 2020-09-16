@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Reflection;
 using System.Linq;
 using System.Net.Sockets;
 using System.Text;
@@ -45,6 +46,7 @@ namespace Starlink
                 int y = 10 + (r * 75);
                 sat3[r] = new SatRight(y);
             }
+            typeof(Panel).InvokeMember("DoubleBuffered", BindingFlags.SetProperty | BindingFlags.Instance | BindingFlags.NonPublic, null, PnlStarlink, new object[] { true });
         }
 
         private void PnlStarlink_Paint(object sender, PaintEventArgs e)
@@ -170,6 +172,7 @@ namespace Starlink
         {
             tmrPlayer.Enabled = false;
             tmrSatellite.Enabled = false;
+            btnCheck.Enabled = false;
             //pImage.x = 200;
         }
 
@@ -237,6 +240,18 @@ namespace Starlink
             }
         }
 
+        private void btnQuit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnCheck_Click(object sender, EventArgs e)
+        {
+            frmHighScores frmHighScore2 = new frmHighScores(txtName.Text, LblScore.Text);
+            Hide();
+            frmHighScore2.ShowDialog();
+        }
+
         private void frmStarlink_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyData == Keys.Left) { left = false; }
@@ -248,6 +263,7 @@ namespace Starlink
             {
                 tmrPlayer.Enabled = false;
                 tmrSatellite.Enabled = false;
+                btnCheck.Enabled = true;
                 MessageBox.Show("Game Over!");
             }
         }

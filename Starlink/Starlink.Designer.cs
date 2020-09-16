@@ -40,6 +40,7 @@
             this.gameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MnuStart = new System.Windows.Forms.ToolStripMenuItem();
             this.MnuStop = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnQuit = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.soundOnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.soundOffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,6 +50,7 @@
             this.tmrPlayer = new System.Windows.Forms.Timer(this.components);
             this.tmrLaser = new System.Windows.Forms.Timer(this.components);
             this.PnlStarlink = new System.Windows.Forms.Panel();
+            this.btnCheck = new System.Windows.Forms.Button();
             this.menuStarlink.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,7 +59,7 @@
             this.LblTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.LblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblTitle.Font = new System.Drawing.Font("OCR A Std", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblTitle.Location = new System.Drawing.Point(12, 27);
             this.LblTitle.Name = "LblTitle";
             this.LblTitle.Size = new System.Drawing.Size(475, 42);
@@ -86,7 +88,7 @@
             // 
             this.Scoring.AutoSize = true;
             this.Scoring.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Scoring.Location = new System.Drawing.Point(564, 214);
+            this.Scoring.Location = new System.Drawing.Point(574, 210);
             this.Scoring.Name = "Scoring";
             this.Scoring.Size = new System.Drawing.Size(65, 24);
             this.Scoring.TabIndex = 3;
@@ -118,7 +120,7 @@
             // 
             this.LblHealth.AutoSize = true;
             this.LblHealth.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblHealth.Location = new System.Drawing.Point(557, 306);
+            this.LblHealth.Location = new System.Drawing.Point(569, 302);
             this.LblHealth.Name = "LblHealth";
             this.LblHealth.Size = new System.Drawing.Size(70, 24);
             this.LblHealth.TabIndex = 6;
@@ -140,7 +142,8 @@
             // 
             this.gameToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MnuStart,
-            this.MnuStop});
+            this.MnuStop,
+            this.btnQuit});
             this.gameToolStripMenuItem.Name = "gameToolStripMenuItem";
             this.gameToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.gameToolStripMenuItem.Text = "Game";
@@ -148,15 +151,22 @@
             // MnuStart
             // 
             this.MnuStart.Name = "MnuStart";
-            this.MnuStart.Size = new System.Drawing.Size(98, 22);
+            this.MnuStart.Size = new System.Drawing.Size(180, 22);
             this.MnuStart.Text = "Start";
             this.MnuStart.Click += new System.EventHandler(this.MnuStart_Click);
             // 
             // MnuStop
             // 
             this.MnuStop.Name = "MnuStop";
-            this.MnuStop.Size = new System.Drawing.Size(98, 22);
+            this.MnuStop.Size = new System.Drawing.Size(180, 22);
             this.MnuStop.Text = "Stop";
+            // 
+            // btnQuit
+            // 
+            this.btnQuit.Name = "btnQuit";
+            this.btnQuit.Size = new System.Drawing.Size(180, 22);
+            this.btnQuit.Text = "Quit";
+            this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
             // 
             // optionsToolStripMenuItem
             // 
@@ -221,11 +231,22 @@
             this.PnlStarlink.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PnlStarlink_MouseDown);
             this.PnlStarlink.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PnlStarlink_MouseMove);
             // 
+            // btnCheck
+            // 
+            this.btnCheck.Location = new System.Drawing.Point(550, 364);
+            this.btnCheck.Name = "btnCheck";
+            this.btnCheck.Size = new System.Drawing.Size(100, 20);
+            this.btnCheck.TabIndex = 9;
+            this.btnCheck.Text = "View Highscores";
+            this.btnCheck.UseVisualStyleBackColor = true;
+            this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
+            // 
             // frmStarlink
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 490);
+            this.Controls.Add(this.btnCheck);
             this.Controls.Add(this.LblHealth);
             this.Controls.Add(this.txtHealth);
             this.Controls.Add(this.LblScore);
@@ -270,6 +291,8 @@
         private System.Windows.Forms.Timer tmrSatellite;
         private System.Windows.Forms.Timer tmrPlayer;
         private System.Windows.Forms.Timer tmrLaser;
+        private System.Windows.Forms.Button btnCheck;
+        private System.Windows.Forms.ToolStripMenuItem btnQuit;
     }
 }
 

@@ -47,6 +47,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmHighScores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHighScores.Designer.cs">
+      <DependentUpon>frmHighScores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HighScores.cs" />
     <Compile Include="Laser.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Satellite.cs" />
@@ -60,6 +67,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmHighScores.resx">
+      <DependentUpon>frmHighScores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Starlink.resx">
       <DependentUpon>Starlink.cs</DependentUpon>
     </EmbeddedResource>
