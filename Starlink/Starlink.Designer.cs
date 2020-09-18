@@ -42,10 +42,10 @@
             this.MnuStop = new System.Windows.Forms.ToolStripMenuItem();
             this.btnQuit = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.soundOnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.soundOffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuSoundOn = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuSoundOff = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.instructionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuInstructions = new System.Windows.Forms.ToolStripMenuItem();
             this.tmrSatellite = new System.Windows.Forms.Timer(this.components);
             this.tmrPlayer = new System.Windows.Forms.Timer(this.components);
             this.tmrLaser = new System.Windows.Forms.Timer(this.components);
@@ -59,7 +59,7 @@
             this.LblTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.LblTitle.Font = new System.Drawing.Font("OCR A Std", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblTitle.Location = new System.Drawing.Point(12, 27);
             this.LblTitle.Name = "LblTitle";
             this.LblTitle.Size = new System.Drawing.Size(475, 42);
@@ -171,37 +171,37 @@
             // optionsToolStripMenuItem
             // 
             this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.soundOnToolStripMenuItem,
-            this.soundOffToolStripMenuItem});
+            this.MnuSoundOn,
+            this.MnuSoundOff});
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
             this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.optionsToolStripMenuItem.Text = "Options";
             // 
-            // soundOnToolStripMenuItem
+            // MnuSoundOn
             // 
-            this.soundOnToolStripMenuItem.Name = "soundOnToolStripMenuItem";
-            this.soundOnToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
-            this.soundOnToolStripMenuItem.Text = "Sound on";
+            this.MnuSoundOn.Name = "MnuSoundOn";
+            this.MnuSoundOn.Size = new System.Drawing.Size(180, 22);
+            this.MnuSoundOn.Text = "Sound on";
             // 
-            // soundOffToolStripMenuItem
+            // MnuSoundOff
             // 
-            this.soundOffToolStripMenuItem.Name = "soundOffToolStripMenuItem";
-            this.soundOffToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
-            this.soundOffToolStripMenuItem.Text = "Sound off";
+            this.MnuSoundOff.Name = "MnuSoundOff";
+            this.MnuSoundOff.Size = new System.Drawing.Size(180, 22);
+            this.MnuSoundOff.Text = "Sound off";
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.instructionsToolStripMenuItem});
+            this.MnuInstructions});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
             // 
-            // instructionsToolStripMenuItem
+            // MnuInstructions
             // 
-            this.instructionsToolStripMenuItem.Name = "instructionsToolStripMenuItem";
-            this.instructionsToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
-            this.instructionsToolStripMenuItem.Text = "Instructions";
+            this.MnuInstructions.Name = "MnuInstructions";
+            this.MnuInstructions.Size = new System.Drawing.Size(180, 22);
+            this.MnuInstructions.Text = "Instructions";
             // 
             // tmrSatellite
             // 
@@ -284,10 +284,10 @@
         private System.Windows.Forms.ToolStripMenuItem MnuStart;
         private System.Windows.Forms.ToolStripMenuItem MnuStop;
         private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem soundOnToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem soundOffToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem MnuSoundOn;
+        private System.Windows.Forms.ToolStripMenuItem MnuSoundOff;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem instructionsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem MnuInstructions;
         private System.Windows.Forms.Timer tmrSatellite;
         private System.Windows.Forms.Timer tmrPlayer;
         private System.Windows.Forms.Timer tmrLaser;

@@ -11,7 +11,7 @@ namespace Starlink
     class Player
     {
         public int x, y, width, height; //Variables for the rectangle
-        public Image pImage; //Variable for the planet's image
+        public Image pImage; //Variable for the player's image
         public Rectangle pRec;//variable for a rectangle to place our image in
         public int score;
         public int rotationAngle;
@@ -24,7 +24,7 @@ namespace Starlink
             //y = 370;
             width = 40;
             height = 40;
-            //pImage contains the player image, craft1
+            //pImage contains the player image, starfighter
             pImage = Properties.Resources.starfighter;
             pRec = new Rectangle(x, y, width, height);
         }
