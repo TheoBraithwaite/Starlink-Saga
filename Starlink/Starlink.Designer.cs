@@ -151,20 +151,20 @@
             // MnuStart
             // 
             this.MnuStart.Name = "MnuStart";
-            this.MnuStart.Size = new System.Drawing.Size(180, 22);
+            this.MnuStart.Size = new System.Drawing.Size(98, 22);
             this.MnuStart.Text = "Start";
             this.MnuStart.Click += new System.EventHandler(this.MnuStart_Click);
             // 
             // MnuStop
             // 
             this.MnuStop.Name = "MnuStop";
-            this.MnuStop.Size = new System.Drawing.Size(180, 22);
+            this.MnuStop.Size = new System.Drawing.Size(98, 22);
             this.MnuStop.Text = "Stop";
             // 
             // btnQuit
             // 
             this.btnQuit.Name = "btnQuit";
-            this.btnQuit.Size = new System.Drawing.Size(180, 22);
+            this.btnQuit.Size = new System.Drawing.Size(98, 22);
             this.btnQuit.Text = "Quit";
             this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
             // 
@@ -180,13 +180,13 @@
             // MnuSoundOn
             // 
             this.MnuSoundOn.Name = "MnuSoundOn";
-            this.MnuSoundOn.Size = new System.Drawing.Size(180, 22);
+            this.MnuSoundOn.Size = new System.Drawing.Size(126, 22);
             this.MnuSoundOn.Text = "Sound on";
             // 
             // MnuSoundOff
             // 
             this.MnuSoundOff.Name = "MnuSoundOff";
-            this.MnuSoundOff.Size = new System.Drawing.Size(180, 22);
+            this.MnuSoundOff.Size = new System.Drawing.Size(126, 22);
             this.MnuSoundOff.Text = "Sound off";
             // 
             // helpToolStripMenuItem
@@ -200,7 +200,7 @@
             // MnuInstructions
             // 
             this.MnuInstructions.Name = "MnuInstructions";
-            this.MnuInstructions.Size = new System.Drawing.Size(180, 22);
+            this.MnuInstructions.Size = new System.Drawing.Size(136, 22);
             this.MnuInstructions.Text = "Instructions";
             // 
             // tmrSatellite
@@ -211,6 +211,7 @@
             // tmrPlayer
             // 
             this.tmrPlayer.Enabled = true;
+            this.tmrPlayer.Interval = 20;
             this.tmrPlayer.Tick += new System.EventHandler(this.tmrPlayer_Tick);
             // 
             // tmrLaser

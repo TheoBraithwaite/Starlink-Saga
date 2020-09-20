@@ -33,17 +33,17 @@ namespace Starlink
             InitializeComponent();
             for (int i = 0; i < 7; i++)
             {
-                int x = 10 + (i * 75);
+                int x = 10 + (i * 70);
                 sat1[i] = new Satellite(x);
             }
             for (int l = 0; l < 7; l++)
             {
-                int y = 10 + (l * 75);
+                int y = 10 + (l * 70);
                 sat2[l] = new SatLeft(y);
             }
             for (int r = 0; r < 7; r++)
             {
-                int y = 10 + (r * 75);
+                int y = 10 + (r * 70);
                 sat3[r] = new SatRight(y);
             }
             typeof(Panel).InvokeMember("DoubleBuffered", BindingFlags.SetProperty | BindingFlags.Instance | BindingFlags.NonPublic, null, PnlStarlink, new object[] { true });
@@ -173,7 +173,8 @@ namespace Starlink
             tmrPlayer.Enabled = false;
             tmrSatellite.Enabled = false;
             btnCheck.Enabled = false;
-            //pImage.x = 200;
+            pImage.pRec.X = 250;
+            pImage.pRec.Y = 206;
         }
 
         private void MnuStart_Click(object sender, EventArgs e)
@@ -265,6 +266,17 @@ namespace Starlink
                 tmrSatellite.Enabled = false;
                 btnCheck.Enabled = true;
                 MessageBox.Show("Game Over!");
+            }
+        }
+        private void CheckScore()
+        {
+            if (score==5)
+            {
+                for (int r = 0; r < 7; r++)
+                {
+                    
+                }
+                    
             }
         }
     }
