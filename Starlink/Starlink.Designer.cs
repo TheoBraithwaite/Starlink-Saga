@@ -62,7 +62,7 @@
             this.LblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblTitle.Location = new System.Drawing.Point(12, 27);
             this.LblTitle.Name = "LblTitle";
-            this.LblTitle.Size = new System.Drawing.Size(475, 42);
+            this.LblTitle.Size = new System.Drawing.Size(996, 143);
             this.LblTitle.TabIndex = 0;
             this.LblTitle.Text = "The Starlink Saga";
             this.LblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -70,27 +70,28 @@
             // LblName
             // 
             this.LblName.AutoSize = true;
-            this.LblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblName.Location = new System.Drawing.Point(569, 120);
+            this.LblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblName.Location = new System.Drawing.Point(1036, 48);
             this.LblName.Name = "LblName";
-            this.LblName.Size = new System.Drawing.Size(65, 24);
+            this.LblName.Size = new System.Drawing.Size(157, 55);
             this.LblName.TabIndex = 0;
             this.LblName.Text = "Name";
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(550, 143);
+            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.Location = new System.Drawing.Point(1060, 106);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(100, 20);
+            this.txtName.Size = new System.Drawing.Size(100, 49);
             this.txtName.TabIndex = 2;
             // 
             // Scoring
             // 
             this.Scoring.AutoSize = true;
-            this.Scoring.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Scoring.Location = new System.Drawing.Point(574, 210);
+            this.Scoring.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Scoring.Location = new System.Drawing.Point(1029, 205);
             this.Scoring.Name = "Scoring";
-            this.Scoring.Size = new System.Drawing.Size(65, 24);
+            this.Scoring.Size = new System.Drawing.Size(155, 55);
             this.Scoring.TabIndex = 3;
             this.Scoring.Text = "Score";
             // 
@@ -98,20 +99,20 @@
             // 
             this.LblScore.BackColor = System.Drawing.Color.White;
             this.LblScore.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LblScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblScore.Location = new System.Drawing.Point(585, 234);
+            this.LblScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblScore.Location = new System.Drawing.Point(1060, 260);
             this.LblScore.Name = "LblScore";
-            this.LblScore.Size = new System.Drawing.Size(40, 20);
+            this.LblScore.Size = new System.Drawing.Size(100, 50);
             this.LblScore.TabIndex = 4;
             this.LblScore.Text = "0";
             this.LblScore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtHealth
             // 
-            this.txtHealth.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHealth.Location = new System.Drawing.Point(585, 329);
+            this.txtHealth.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHealth.Location = new System.Drawing.Point(1065, 422);
             this.txtHealth.Name = "txtHealth";
-            this.txtHealth.Size = new System.Drawing.Size(40, 20);
+            this.txtHealth.Size = new System.Drawing.Size(99, 47);
             this.txtHealth.TabIndex = 5;
             this.txtHealth.Text = "1000";
             this.txtHealth.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -119,10 +120,10 @@
             // LblHealth
             // 
             this.LblHealth.AutoSize = true;
-            this.LblHealth.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblHealth.Location = new System.Drawing.Point(569, 302);
+            this.LblHealth.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblHealth.Location = new System.Drawing.Point(1029, 364);
             this.LblHealth.Name = "LblHealth";
-            this.LblHealth.Size = new System.Drawing.Size(70, 24);
+            this.LblHealth.Size = new System.Drawing.Size(169, 55);
             this.LblHealth.TabIndex = 6;
             this.LblHealth.Text = "Health";
             // 
@@ -134,7 +135,7 @@
             this.helpToolStripMenuItem});
             this.menuStarlink.Location = new System.Drawing.Point(0, 0);
             this.menuStarlink.Name = "menuStarlink";
-            this.menuStarlink.Size = new System.Drawing.Size(684, 24);
+            this.menuStarlink.Size = new System.Drawing.Size(1205, 24);
             this.menuStarlink.TabIndex = 7;
             this.menuStarlink.Text = "GameMenu";
             // 
@@ -226,7 +227,7 @@
             this.PnlStarlink.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.PnlStarlink.Location = new System.Drawing.Point(12, 70);
             this.PnlStarlink.Name = "PnlStarlink";
-            this.PnlStarlink.Size = new System.Drawing.Size(504, 412);
+            this.PnlStarlink.Size = new System.Drawing.Size(1000, 500);
             this.PnlStarlink.TabIndex = 1;
             this.PnlStarlink.Paint += new System.Windows.Forms.PaintEventHandler(this.PnlStarlink_Paint);
             this.PnlStarlink.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PnlStarlink_MouseDown);
@@ -234,9 +235,10 @@
             // 
             // btnCheck
             // 
-            this.btnCheck.Location = new System.Drawing.Point(550, 364);
+            this.btnCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheck.Location = new System.Drawing.Point(1026, 475);
             this.btnCheck.Name = "btnCheck";
-            this.btnCheck.Size = new System.Drawing.Size(100, 20);
+            this.btnCheck.Size = new System.Drawing.Size(170, 42);
             this.btnCheck.TabIndex = 9;
             this.btnCheck.Text = "View Highscores";
             this.btnCheck.UseVisualStyleBackColor = true;
@@ -246,7 +248,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 490);
+            this.ClientSize = new System.Drawing.Size(1205, 591);
             this.Controls.Add(this.btnCheck);
             this.Controls.Add(this.LblHealth);
             this.Controls.Add(this.txtHealth);

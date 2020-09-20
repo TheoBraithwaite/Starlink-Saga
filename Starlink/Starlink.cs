@@ -15,7 +15,7 @@ namespace Starlink
     public partial class frmStarlink : Form
     {
         Graphics g; //declare a graphics object called g
-        Satellite[] sat1 = new Satellite[7];
+        Satellite[] sat1 = new Satellite[10];
         SatLeft[] sat2 = new SatLeft[7];
         SatRight[] sat3 = new SatRight[7];
         Player pImage = new Player();
@@ -31,19 +31,19 @@ namespace Starlink
         public frmStarlink()
         {
             InitializeComponent();
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < 10; i++)
             {
-                int x = 10 + (i * 70);
+                int x = 10 + (i * 100);
                 sat1[i] = new Satellite(x);
             }
             for (int l = 0; l < 7; l++)
             {
-                int y = 10 + (l * 70);
+                int y = 10 + (l * 80);
                 sat2[l] = new SatLeft(y);
             }
             for (int r = 0; r < 7; r++)
             {
-                int y = 10 + (r * 70);
+                int y = 10 + (r * 80);
                 sat3[r] = new SatRight(y);
             }
             typeof(Panel).InvokeMember("DoubleBuffered", BindingFlags.SetProperty | BindingFlags.Instance | BindingFlags.NonPublic, null, PnlStarlink, new object[] { true });
@@ -56,7 +56,7 @@ namespace Starlink
             //Call the Player class's DrawPlayer method to draw the spacecraft image, craft1
             pImage.DrawPlayer(g);
             //call the Satellite class's DrawSatellite method to draw the image sat1 
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < 10; i++)
             {
                 // generate a random number from 5 to 20 and put it in rndmspeed
                 int rndmspeed = yspeed.Next(5, 20);
@@ -102,10 +102,10 @@ namespace Starlink
                 if (pImage.pRec.IntersectsWith(sat1[i].satRec))
                 {
                     //Reset planet[i] back to top of panel
-                    sat1[i].y = 30; //Set y value of planetRec
+                    sat1[i].y = 10; //Set y value of planetRec
                     health -= 10; //Lose 10 health
                     txtHealth.Text = health.ToString(); //Display number of lives
-                    CheckLives();
+                    CheckHealth();
                 }
                 if (pImage.pRec.IntersectsWith(sat2[i].satRec))
                 {
@@ -113,20 +113,20 @@ namespace Starlink
                     sat2[i].x = 10; //Set y value of planetRec
                     health -= 10; //Lose 10 health
                     txtHealth.Text = health.ToString(); //Display number of lives
-                    CheckLives();
+                    CheckHealth();
                 }
                 if (pImage.pRec.IntersectsWith(sat3[i].satRec))
                 {
                     //Reset planet[i] back to top of panel
-                    sat3[i].x = 460; //Set y value of planetRec
-                    health -= 1; //Lose 10 health
+                    sat3[i].x = 910; //Set y value of planetRec
+                    health -= 10; //Lose 10 health
                     txtHealth.Text = health.ToString(); //Display number of lives
-                    CheckLives();
+                    CheckHealth();
                 }
                 //if a satellite reaches the bottom of the Game Area reposition it at the top
                 if (sat1[i].y >= PnlStarlink.Height)
                 {
-                    sat1[i].y = 30;
+                    sat1[i].y = 10;
                 }
                 if (sat2[i].x >= PnlStarlink.Width)
                 {
@@ -134,7 +134,21 @@ namespace Starlink
                 }
                 if (sat3[i].x <= 0)
                 {
-                    sat3[i].x = 460;
+                    sat3[i].x = 910;
+                }
+                if (score >= 10)
+                {
+                    int rndmspeed = yspeed.Next(20, 30);
+                    int rndmspeed2 = xspeed1.Next(20, 30);
+                    int rndmsdpeed3 = xspeed2.Next(20, 30);
+                    sat1[i].y += rndmspeed;
+                    sat2[i].x += rndmspeed2;
+                    sat3[i].x -= rndmsdpeed3;
+
+                    //call the Planet class's drawPlanet method to draw the images
+                    sat1[i].MoveSatellite();
+                    sat2[i].MoveSatellite();
+                    sat3[i].MoveSatellite();
                 }
             }
             PnlStarlink.Invalidate();//makes the paint event fire to redraw the panel
@@ -176,13 +190,15 @@ namespace Starlink
             btnCheck.Enabled = false;
             pImage.pRec.X = 250;
             pImage.pRec.Y = 206;
+            txtHealth.Text = "100";
+            
         }
 
         private void MnuStart_Click(object sender, EventArgs e)
         {
             score = 0;
             LblScore.Text = score.ToString();
-            health = int.Parse(txtHealth.Text); //Pass the health of the spacecraft to lives variable
+            health = int.Parse(txtHealth.Text); //Pass the health of the spacecraft to health variable
             tmrPlayer.Enabled = true;
             tmrSatellite.Enabled = true;
             txtName.Enabled = false;
@@ -259,7 +275,7 @@ namespace Starlink
             if (e.KeyData == Keys.Left) { left = false; }
             if (e.KeyData == Keys.Right) { right = false; }
         }
-        private void CheckLives()
+        private void CheckHealth()
         {
             if (health == 0)
             {
@@ -267,17 +283,6 @@ namespace Starlink
                 tmrSatellite.Enabled = false;
                 btnCheck.Enabled = true;
                 MessageBox.Show("Game Over!");
-            }
-        }
-        private void CheckScore()
-        {
-            if (score==5)
-            {
-                for (int r = 0; r < 7; r++)
-                {
-                    
-                }
-                    
             }
         }
     }
