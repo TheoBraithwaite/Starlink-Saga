@@ -113,7 +113,7 @@
             this.txtHealth.Name = "txtHealth";
             this.txtHealth.Size = new System.Drawing.Size(40, 20);
             this.txtHealth.TabIndex = 5;
-            this.txtHealth.Text = "3";
+            this.txtHealth.Text = "1000";
             this.txtHealth.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // LblHealth

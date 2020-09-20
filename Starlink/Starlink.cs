@@ -103,7 +103,7 @@ namespace Starlink
                 {
                     //Reset planet[i] back to top of panel
                     sat1[i].y = 30; //Set y value of planetRec
-                    health -= 1; //Lose a life
+                    health -= 10; //Lose 10 health
                     txtHealth.Text = health.ToString(); //Display number of lives
                     CheckLives();
                 }
@@ -111,7 +111,7 @@ namespace Starlink
                 {
                     //Reset planet[i] back to top of panel
                     sat2[i].x = 10; //Set y value of planetRec
-                    health -= 1; //Lose a life
+                    health -= 10; //Lose 10 health
                     txtHealth.Text = health.ToString(); //Display number of lives
                     CheckLives();
                 }
@@ -119,7 +119,7 @@ namespace Starlink
                 {
                     //Reset planet[i] back to top of panel
                     sat3[i].x = 460; //Set y value of planetRec
-                    health -= 1; //Lose a life
+                    health -= 1; //Lose 10 health
                     txtHealth.Text = health.ToString(); //Display number of lives
                     CheckLives();
                 }
@@ -170,6 +170,7 @@ namespace Starlink
 
         private void frmStarlink_Load(object sender, EventArgs e)
         {
+            MessageBox.Show("Use the mouse to move the starship around the panel. Use the left and right arrow keys to rotate the starship. \n Don't get hit by Elon Musk's satellites! \n Every satellite shot down scores a point. \n If one of Elon Musk's satellites hits your starship 10 health is lost! \n \n Enter your Name press tab and enter the amount of health you wish to have \n Click Start to begin", "Game Instructions");
             tmrPlayer.Enabled = false;
             tmrSatellite.Enabled = false;
             btnCheck.Enabled = false;
